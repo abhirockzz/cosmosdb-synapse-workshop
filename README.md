@@ -63,7 +63,7 @@ For Azure Cosmos DB **MongoDB API** account:
 
 Create a database named **DemoSynapseLinkMongoDB** along with a collection named **HTAP** with a Shard key called **item**. Make sure you set the **Analytical store** option to **On** when you create your collection.
 
-### Add Linked Service and static data in Azure Synapse workspace
+### Add a Linked Service and static data in Azure Synapse workspace
 
 - [Create a "Linked Service" for the Azure Cosmos DB SQL API in Azure Synapse workspace](https://docs.microsoft.com/azure/synapse-analytics/synapse-link/how-to-connect-synapse-link-cosmos-db?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json&WT.mc_id=data-11340-abhishgu#connect-an-azure-cosmos-db-database-to-an-azure-synapse-workspace) - for this demo, we use the name `RetailSalesDemoDB`
 - Load batch data in the [Azure Data Lake Storage Gen2 account](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-introduction?WT.mc_id=data-11340-abhishgu) associated with your Azure Synapse Analytics workspace. Create a `RetailData` folder within the root directory of the storage account. Download [these csv files](https://github.com/Azure-Samples/Synapse/tree/master/Notebooks/PySpark/Synapse%20Link%20for%20Cosmos%20DB%20samples/Retail/RetailData) to your local machine and upload them to the  `RetailData` folder you just created.
