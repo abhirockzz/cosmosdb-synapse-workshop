@@ -98,13 +98,15 @@ We will explore [this notebook](https://github.com/Azure-Samples/Synapse/blob/ma
 
 Clone or download the content from the [samples repo](https://github.com/Azure-Samples/Synapse), navigate to the `Synapse/Notebooks/PySpark/Synapse Link for Cosmos DB samples/E-Commerce/spark-notebooks/pyspark` directory and import the `CosmosDBSynapseMongoDB.ipynb` file into your Azure Synapse workspace.
 
+## Wrap up and next steps
+
 That's all for this workshop. I encourage you to go through the [rest of this lab](https://github.com/Azure-Samples/Synapse/blob/master/Notebooks/PySpark/Synapse%20Link%20for%20Cosmos%20DB%20samples/Retail/spark-notebooks/pyspark/2SalesForecastingWithAML.ipynb) which includes using [AutoML in Azure Machine Learning](https://docs.microsoft.com/azure/machine-learning/concept-automated-ml?WT.mc_id=data-11340-abhishgu) to build a Forecasting Model.
 
-## Delete resources
+### Important: Delete resources
 
 Delete the [Azure Resource Group](https://docs.microsoft.com/azure/azure-resource-manager/management/manage-resource-groups-portal?WT.mc_id=data-11340-abhishgu#delete-resource-groups). This will delete all the resources inside the resource group.
 
-## Learn at your own pace
+## Continue to learn at your own pace!
 
 - Learn more about [the use cases for Apache Spark in Azure Synapse Analytics](https://docs.microsoft.com/azure/synapse-analytics/spark/apache-spark-overview?WT.mc_id=data-11340-abhishgu#apache-spark-in-azure-synapse-analytics-use-cases), including Data Engineering, Machine Learning etc.
 - Learn how to [enrich data in Spark tables with new machine learning models that you train using AutoML in Azure Machine Learning](https://docs.microsoft.com/azure/synapse-analytics/machine-learning/tutorial-automl?WT.mc_id=data-11340-abhishgu)
