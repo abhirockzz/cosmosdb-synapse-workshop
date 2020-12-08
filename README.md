@@ -74,7 +74,9 @@ You're all set to try out the Notebooks!
 
 **Batch Data Ingestion leveraging Synapse Link for Azure Cosmos DB**
 
-We will use [this notebook](https://github.com/Azure-Samples/Synapse/blob/master/Notebooks/PySpark/Synapse%20Link%20for%20Cosmos%20DB%20samples/Retail/spark-notebooks/pyspark/1CosmoDBSynapseSparkBatchIngestion.ipynb) to ingest batch data into Azure Cosmos DB using using Synapse. Apache Spark (with PySpark) is used for this purposes. Read up more on [the use cases for Apache Spark in Azure Synapse Analytics](https://docs.microsoft.com/azure/synapse-analytics/spark/apache-spark-overview?WT.mc_id=data-11340-abhishgu#apache-spark-in-azure-synapse-analytics-use-cases), including Data Engineering, Machine Learning etc.
+We will go through how to ingest batch data into Azure Cosmos DB using using Synapse. Apache Spark (with PySpark) using [this notebook](https://github.com/Azure-Samples/Synapse/blob/master/Notebooks/PySpark/Synapse%20Link%20for%20Cosmos%20DB%20samples/Retail/spark-notebooks/pyspark/1CosmoDBSynapseSparkBatchIngestion.ipynb). 
+
+> Learn more about [the use cases for Apache Spark in Azure Synapse Analytics](https://docs.microsoft.com/azure/synapse-analytics/spark/apache-spark-overview?WT.mc_id=data-11340-abhishgu#apache-spark-in-azure-synapse-analytics-use-cases), including Data Engineering, Machine Learning etc.
 
 Clone or download the content from the [samples repo](https://github.com/Azure-Samples/Synapse), navigate to the `Synapse/Notebooks/PySpark/Synapse Link for Cosmos DB samples/Retail/spark-notebooks/pyspark` directory and import the `1CosmoDBSynapseSparkBatchIngestion.ipynb` file into your Azure Synapse workspace
 
