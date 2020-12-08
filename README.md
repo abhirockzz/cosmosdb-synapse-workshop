@@ -92,9 +92,7 @@ Clone or download the content from the [samples repo](https://github.com/Azure-S
 
 **Getting started with Azure Cosmos DB's API for MongoDB and Synapse Link**
 
-We will explore [this notebook](https://github.com/Azure-Samples/Synapse/blob/master/Notebooks/PySpark/Synapse%20Link%20for%20Cosmos%20DB%20samples/IoT/spark-notebooks/pyspark/01-CosmosDBSynapseStreamIngestion.ipynb).
-
-This notebook uses specific Python libraries. Please upload the `requirements.txt` file located in `Synapse/Notebooks/PySpark/Synapse Link for Cosmos DB samples/E-Commerce/spark-notebooks/pyspark` directory to install these to your Spark pool packages.
+We will explore [this notebook](https://github.com/Azure-Samples/Synapse/blob/master/Notebooks/PySpark/Synapse%20Link%20for%20Cosmos%20DB%20samples/IoT/spark-notebooks/pyspark/01-CosmosDBSynapseStreamIngestion.ipynb). Since it uses specific Python libraries you will need to upload the `requirements.txt` file located in `Synapse/Notebooks/PySpark/Synapse Link for Cosmos DB samples/E-Commerce/spark-notebooks/pyspark` directory to install these to your Spark pool packages.
 
 > Here is detailed write-up on how to [Manage libraries for Apache Spark in Azure Synapse Analytics](https://docs.microsoft.com/azure/synapse-analytics/spark/apache-spark-azure-portal-add-libraries?WT.mc_id=data-11340-abhishgu)
 
