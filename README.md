@@ -45,8 +45,6 @@ First things first, [create a Resource Group](https://docs.microsoft.com/azure/a
 - Create an [Azure Synapse Workspace](https://docs.microsoft.com/azure/synapse-analytics/quickstart-create-workspace?WT.mc_id=data-11340-abhishgu). Please ensure that you select the checkbox `Assign myself the Storage Blob Data Contributor role on the Data Lake Storage Gen2 account` in the creation wizard
 - Create an [Azure Synapse Analytics Spark Pool](https://docs.microsoft.com/azure/synapse-analytics/quickstart-create-apache-spark-pool-portal?WT.mc_id=data-11340-abhishgu)
 
-Using the Azure Portal, go to the **Access Control (IAM)** tab, click on the **+Add** and **Add a role assignment** links and add yourself to the **Contributor** role. This will allow you to create databases and tables within from your Azure Synapse Spark Pool.
-
 For Azure Cosmos DB **Core SQL API** account:
 
 Create Azure Cosmos DB database (named **RetailSalesDemoDB**) and three containers (**StoreDemoGraphics**, **RetailSales**, and **Products**). Please make sure to:
@@ -61,7 +59,7 @@ For Azure Cosmos DB **MongoDB API** account:
 
 Create a database named **DemoSynapseLinkMongoDB** along with a collection named **HTAP** with a Shard key called **item**. Make sure you set the **Analytical store** option to **On** when you create your collection.
 
-### Workshop setup
+### Add Linked Service and static data in Azure Synapse workspace
 
 - [Create a "Linked Service" for the Azure Cosmos DB SQL API in Azure Synapse workspace](https://docs.microsoft.com/azure/synapse-analytics/synapse-link/how-to-connect-synapse-link-cosmos-db?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json&WT.mc_id=data-11340-abhishgu#connect-an-azure-cosmos-db-database-to-an-azure-synapse-workspace) - for this demo, we use the name `RetailSalesDemoDB`
 - Load batch data in the [Azure Data Lake Storage Gen2 account](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-introduction?WT.mc_id=data-11340-abhishgu) associated with your Azure Synapse Analytics workspace. Create a `RetailData` folder within the root directory of the storage account. Download [these csv files](https://github.com/Azure-Samples/Synapse/tree/master/Notebooks/PySpark/Synapse%20Link%20for%20Cosmos%20DB%20samples/Retail/RetailData) to your local machine and upload them to the  `RetailData` folder you just created.
@@ -88,15 +86,15 @@ Clone or download the content from the [samples repo](https://github.com/Azure-S
 
 We will explore [this notebook](https://github.com/Azure-Samples/Synapse/blob/master/Notebooks/PySpark/Synapse%20Link%20for%20Cosmos%20DB%20samples/IoT/spark-notebooks/pyspark/01-CosmosDBSynapseStreamIngestion.ipynb) to get an overview of how to work with streaming data using Spark.
 
-Clone or download the content from the [samples repo](https://github.com/Azure-Samples/Synapse), navigate to the `Synapse/Notebooks/PySpark/Synapse Link for Cosmos DB samples/Retail/spark-notebooks/pyspark` directory and navigate to the `Synapse/Notebooks/PySpark/Synapse Link for Cosmos DB samples/IoT/spark-notebooks/pyspark` directory and import the `01-CosmosDBSynapseStreamIngestion.ipynb` file into your Azure Synapse workspace
+Clone or download the content from the [samples repo](https://github.com/Azure-Samples/Synapse), navigate to the `Synapse/Notebooks/PySpark/Synapse Link for Cosmos DB samples/IoT/spark-notebooks/pyspark` directory and import the `01-CosmosDBSynapseStreamIngestion.ipynb` file into your Azure Synapse workspace
 
 **Getting started with Azure Cosmos DB's API for MongoDB and Synapse Link**
 
 We will explore [this notebook](https://github.com/Azure-Samples/Synapse/blob/master/Notebooks/PySpark/Synapse%20Link%20for%20Cosmos%20DB%20samples/IoT/spark-notebooks/pyspark/01-CosmosDBSynapseStreamIngestion.ipynb) to get an overview of how to work with streaming data using Spark.
 
-Clone or download the content from the [samples repo](https://github.com/Azure-Samples/Synapse), navigate to the `Synapse/Notebooks/PySpark/Synapse Link for Cosmos DB samples/Retail/spark-notebooks/pyspark` directory and navigate to the `Synapse/Notebooks/PySpark/Synapse Link for Cosmos DB samples/IoT/spark-notebooks/pyspark` directory and import the `01-CosmosDBSynapseStreamIngestion.ipynb` file into your Azure Synapse workspace.
+Clone or download the content from the [samples repo](https://github.com/Azure-Samples/Synapse), navigate to the `Synapse/Notebooks/PySpark/Synapse Link for Cosmos DB samples/E-Commerce/spark-notebooks/pyspark` directory and import the `CosmosDBSynapseMongoDB.ipynb` file into your Azure Synapse workspace.
 
-This notebook uses specific Python libraries. Please upload the `requirements.txt` file located in ``Synapse/Notebooks/PySpark/Synapse Link for Cosmos DB samples/Retail/spark-notebooks/pyspark` directory and navigate to the `Synapse/Notebooks/PySpark/Synapse Link for Cosmos DB samples/IoT/spark-notebooks/pyspark` directory to install these to your Spark pool packages. 
+This notebook uses specific Python libraries. Please upload the `requirements.txt` file located in `Synapse/Notebooks/PySpark/Synapse Link for Cosmos DB samples/E-Commerce/spark-notebooks/pyspark` directory to install these to your Spark pool packages.
 
 > Here is detailed write-up on how to [Manage libraries for Apache Spark in Azure Synapse Analytics](https://docs.microsoft.com/azure/synapse-analytics/spark/apache-spark-azure-portal-add-libraries?WT.mc_id=data-11340-abhishgu)
 
