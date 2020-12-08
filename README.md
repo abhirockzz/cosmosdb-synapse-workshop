@@ -18,7 +18,8 @@ It will cover:
 If you want to go back and learn some of the foundational concepts, the following resources might be helpful:
 
 - Key [Azure Cosmos DB concepts](https://docs.microsoft.com/azure/cosmos-db/account-databases-containers-items?WT.mc_id=data-11340-abhishgu) and [how to choose the appropriate API for Azure Cosmos DB](https://docs.microsoft.com/learn/modules/choose-api-for-cosmos-db/?WT.mc_id=data-11340-abhishgu)
-- [Basic terminology associated with Azure Synapse Analytics](https://docs.microsoft.com/azure/synapse-analytics/overview-terminology?WT.mc_id=data-11340-abhishgu) and [the features, components that Azure Synapse Analytics provides.](https://docs.microsoft.com/learn/modules/introduction-azure-synapse-analytics/?WT.mc_id=data-11340-abhishgu)
+- [Basic terminology associated with Azure Synapse Analytics](https://docs.microsoft.com/azure/synapse-analytics/overview-terminology?WT.mc_id=data-11340-abhishgu) 
+- A Learn Module that covers [the features, components that Azure Synapse Analytics provides](https://docs.microsoft.com/learn/modules/introduction-azure-synapse-analytics/?WT.mc_id=data-11340-abhishgu)
 - [An overview of Azure Synapse Link for Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/synapse-link?WT.mc_id=data-11340-abhishgu) and [how to configure and enable Azure Synapse Link to interact with Azure Cosmos DB.](https://docs.microsoft.com/learn/modules/configure-azure-synapse-link-with-azure-cosmos-db/?WT.mc_id=data-11340-abhishgu)
 
 ## Pre-requisites
