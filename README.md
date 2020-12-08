@@ -47,6 +47,8 @@ First things first, [create a Resource Group](https://docs.microsoft.com/azure/a
 
 ## Workshop setup
 
+> Will be covered during the course of the workshop
+
 For Azure Cosmos DB **Core SQL API** account:
 
 Create Azure Cosmos DB database (named **RetailSalesDemoDB**) and three containers (**StoreDemoGraphics**, **RetailSales**, and **Products**). Please make sure to:
