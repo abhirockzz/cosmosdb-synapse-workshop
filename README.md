@@ -24,39 +24,48 @@ If you want to go back and learn some of the foundational concepts, the followin
 
 ## Pre-requisites
 
-> The steps outlined in this section have completed in advance to save time. The following resources are already available: Azure Cosmos DB accounts (Core SQL API, Mongo DB API), Azure Synapse Analytics workspace along with a Apache Spark pool.
+The steps outlined in this section have completed in advance to save time. The following resources are already available:
 
-Start by creating a free [Microsoft Azure Account](https://aka.ms/azure-account-free)
+- Azure Cosmos DB accounts (Core SQL API, Mongo DB API)
+- Azure Cosmos DB databases, containers, collections
+- Azure Synapse Analytics workspace along with a Apache Spark pool
+
+> You can use an existing Azure account or create a [free account using this link](https://aka.ms/azure-account-free).
+
+First things first, [create a Resource Group](https://docs.microsoft.com/azure/azure-resource-manager/management/manage-resource-groups-portal?WT.mc_id=data-11340-abhishgu#create-resource-groups) to host the resources used for this workshop. This will make it easier to manage them and clean-up once you're done.
 
 **Azure Cosmos DB**
 
-- Create an [Azure Cosmos DB SQL (CORE) API account](https://docs.microsoft.com/en-us/azure/cosmos-db/create-cosmosdb-resources-portal?WT.mc_id=data-11340-abhishgu#create-an-azure-cosmos-db-account)
-    - Enable [Synapse Link for Azure Cosmos DB](https://docs.microsoft.com/en-us/azure/cosmos-db/configure-synapse-link?WT.mc_id=data-11340-abhishgu#enable-synapse-link)
-    - [Configure IP firewall in Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/how-to-configure-firewall?WT.mc_id=data-11340-abhishgu). Go to the Azure Cosmos DB SQL (CORE) API account page and select **Firewall and virtual networks** on the navigation menu. Change **Allow access** value to **All networks**, and then select **Save**
-- Create an [Azure Cosmos DB API for MongoDB account](https://docs.microsoft.com/azure/cosmos-db/create-mongodb-dotnet?WT.mc_id=data-11340-abhishgu#create-a-database-account)
+- Create an [Azure Cosmos DB SQL (CORE) API account](https://docs.microsoft.com/en-us/azure/cosmos-db/create-cosmosdb-resources-portal?WT.mc_id=data-11340-abhishgu#create-an-azure-cosmos-db-account). For the purposes of this workshop, please choose **All networks** as the **Connectivity method** option (in the **Networking** section of the create account wizard)
+- Create an [Azure Cosmos DB API for MongoDB account](https://docs.microsoft.com/azure/cosmos-db/create-mongodb-dotnet?WT.mc_id=data-11340-abhishgu#create-a-database-account). For the purposes of this workshop, please choose **All networks** as the **Connectivity method** option (in the **Networking** section of the create account wizard)
+- For both the accounts (Core SQL and MongoDB), enable [Synapse Link for Azure Cosmos DB](https://docs.microsoft.com/en-us/azure/cosmos-db/configure-synapse-link?WT.mc_id=data-11340-abhishgu#enable-synapse-link)
 
 **Azure Synapse Analytics**
 
-- Create an [Azure Synapse Workspace](https://docs.microsoft.com/azure/synapse-analytics/quickstart-create-workspace?WT.mc_id=data-11340-abhishgu)
+- Create an [Azure Synapse Workspace](https://docs.microsoft.com/azure/synapse-analytics/quickstart-create-workspace?WT.mc_id=data-11340-abhishgu). Please ensure that you select the checkbox `Assign myself the Storage Blob Data Contributor role on the Data Lake Storage Gen2 account` in the creation wizard
 - Create an [Azure Synapse Analytics Spark Pool](https://docs.microsoft.com/azure/synapse-analytics/quickstart-create-apache-spark-pool-portal?WT.mc_id=data-11340-abhishgu)
 
 Using the Azure Portal, go to the **Access Control (IAM)** tab, click on the **+Add** and **Add a role assignment** links and add yourself to the **Contributor** role. This will allow you to create databases and tables within from your Azure Synapse Spark Pool.
 
-## Workshop setup
-
-> This will be covered during the workshop
+For Azure Cosmos DB **Core SQL API** account:
 
 Create Azure Cosmos DB database (named **RetailSalesDemoDB**) and three containers (**StoreDemoGraphics**, **RetailSales**, and **Products**). Please make sure to:
 
-- Set the database throughput to `Autoscale` and set the limit to `4000` instead of `400`, this will speed-up the loading process of the data, scaling down the database when it is not in use. For more information, [check the documentation](https://docs.microsoft.com/azure/cosmos-db/provision-throughput-autoscale?WT.mc_id=data-11340-abhishgu).
+- Set the database throughput to `Autoscale` and set the limit to `40000` instead of `400`, this will speed-up the loading process of the data, scaling down the database when it is not in use. For more information, [check the documentation](https://docs.microsoft.com/azure/cosmos-db/provision-throughput-autoscale?WT.mc_id=data-11340-abhishgu).
 - Use **/id** as the Partition key for all 3 containers.
 - **Analytical store** is set to **On** for all 3 containers.
 
 > [Detailed steps are outlined in the documentation](https://docs.microsoft.com/azure/cosmos-db/configure-synapse-link?WT.mc_id=reactor-3reg-reactor&WT.mc_id=data-11340-abhishgu#create-analytical-ttl)
 
-For Azure Synapse Analytics:
+For Azure Cosmos DB **MongoDB API** account:
 
-- [Create an Azure Cosmos DB "Linked Service" in Azure Synapse workspace](https://docs.microsoft.com/azure/synapse-analytics/synapse-link/how-to-connect-synapse-link-cosmos-db?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json&WT.mc_id=data-11340-abhishgu#connect-an-azure-cosmos-db-database-to-an-azure-synapse-workspace)
+Create a database named **DemoSynapseLinkMongoDB** along with a collection named **HTAP** with a Shard key called **item**. Make sure you set the **Analytical store** option to **On** when you create your collection.
+
+## Workshop setup
+
+> This will be covered during the workshop
+
+- [Create a "Linked Service" for the Azure Cosmos DB SQL API in Azure Synapse workspace](https://docs.microsoft.com/azure/synapse-analytics/synapse-link/how-to-connect-synapse-link-cosmos-db?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json&WT.mc_id=data-11340-abhishgu#connect-an-azure-cosmos-db-database-to-an-azure-synapse-workspace) - for this demo, we use the name `RetailSalesDemoDB`
 - Load batch data in the [Azure Data Lake Storage Gen2 account](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-introduction?WT.mc_id=data-11340-abhishgu) associated with your Azure Synapse Analytics workspace. Create a `RetailData` folder within the root directory of the storage account. Download [these csv files](https://github.com/Azure-Samples/Synapse/tree/master/Notebooks/PySpark/Synapse%20Link%20for%20Cosmos%20DB%20samples/Retail/RetailData) to your local machine and upload them to the  `RetailData` folder you just created.
 
 You're all set to try out the Notebooks!
@@ -82,6 +91,8 @@ Clone or download the content from the [samples repo](https://github.com/Azure-S
 We will explore [this notebook](https://github.com/Azure-Samples/Synapse/blob/master/Notebooks/PySpark/Synapse%20Link%20for%20Cosmos%20DB%20samples/IoT/spark-notebooks/pyspark/01-CosmosDBSynapseStreamIngestion.ipynb) to get an overview of how to work with streaming data using Spark.
 
 Clone or download the content from the [samples repo](https://github.com/Azure-Samples/Synapse), navigate to the `Synapse/Notebooks/PySpark/Synapse Link for Cosmos DB samples/Retail/spark-notebooks/pyspark` directory and navigate to the `Synapse/Notebooks/PySpark/Synapse Link for Cosmos DB samples/IoT/spark-notebooks/pyspark` directory and import the `01-CosmosDBSynapseStreamIngestion.ipynb` file into your Azure Synapse workspace.
+
+## Delete resources
 
 ## Learn at your own pace
 
