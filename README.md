@@ -45,6 +45,9 @@ First things first, [create a Resource Group](https://docs.microsoft.com/azure/a
 - Create an [Azure Synapse Workspace](https://docs.microsoft.com/azure/synapse-analytics/quickstart-create-workspace?WT.mc_id=data-11340-abhishgu). Please ensure that you select the checkbox `Assign myself the Storage Blob Data Contributor role on the Data Lake Storage Gen2 account` in the creation wizard
 - Create an [Azure Synapse Analytics Spark Pool](https://docs.microsoft.com/azure/synapse-analytics/quickstart-create-apache-spark-pool-portal?WT.mc_id=data-11340-abhishgu)
 
+
+## Workshop setup
+
 For Azure Cosmos DB **Core SQL API** account:
 
 Create Azure Cosmos DB database (named **RetailSalesDemoDB**) and three containers (**StoreDemoGraphics**, **RetailSales**, and **Products**). Please make sure to:
@@ -99,6 +102,8 @@ This notebook uses specific Python libraries. Please upload the `requirements.tx
 Clone or download the content from the [samples repo](https://github.com/Azure-Samples/Synapse), navigate to the `Synapse/Notebooks/PySpark/Synapse Link for Cosmos DB samples/E-Commerce/spark-notebooks/pyspark` directory and import the `CosmosDBSynapseMongoDB.ipynb` file into your Azure Synapse workspace.
 
 ## Delete resources
+
+Delete the [Azure Resource Group](https://docs.microsoft.com/azure/azure-resource-manager/management/manage-resource-groups-portal?WT.mc_id=data-11340-abhishgu#delete-resource-groups). This will delete all the resources inside the resource group.
 
 ## Learn at your own pace
 
