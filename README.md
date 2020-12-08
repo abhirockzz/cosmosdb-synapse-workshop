@@ -1,8 +1,8 @@
 # Near Real Time Analytics with Azure Synapse Link for Azure Cosmos DB
 
-In this workshop, we will go through some of the [Synapse Spark sample notebooks](https://aka.ms/cosmosdb-synapselink-samples). This should provide a starting point for you to dive into the official samples: https://aka.ms/cosmosdb-synapselink-samples. By the way, we encourage feedback and welcome contributions!
+In this workshop, you will learn about **Azure Synapse Link for Azure Cosmos DB**. We will go through some of the notebooks from the official samples repository - https://aka.ms/cosmosdb-synapselink-samples
 
-You will learn about:
+It will cover:
 
 - [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/?WT.mc_id=data-11340-abhishgu) and how it integrates with [Azure Synapse Analytics](https://docs.microsoft.com/azure/synapse-analytics/?WT.mc_id=data-11340-abhishgu) using [Azure Synapse Link](https://docs.microsoft.com/azure/cosmos-db/synapse-link?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&WT.mc_id=data-11340-abhishgu).
 - Basic operations such as setting up Azure Cosmos DB and Azure Synapse Analytics. Creating Azure Cosmos DB containers, setting up Linked Service.
@@ -10,7 +10,6 @@ You will learn about:
     - Batch Data Ingestion leveraging Synapse Link for Azure Cosmos DB and performing operations across Azure Cosmos DB containers
     - Streaming ingestion into Azure Cosmos DB collection using Structured Streaming
     - Getting started with Azure Cosmos DB's API for MongoDB and Synapse Link
-
 
 ![](https://docs.microsoft.com/en-us/azure/cosmos-db/media/synapse-link/synapse-analytics-cosmos-db-architecture.png)
 
@@ -27,10 +26,9 @@ If you want to go back and learn some of the foundational concepts, the followin
 The steps outlined in this section have completed in advance to save time. The following resources are already available:
 
 - Azure Cosmos DB accounts (Core SQL API, Mongo DB API)
-- Azure Cosmos DB databases, containers, collections
 - Azure Synapse Analytics workspace along with a Apache Spark pool
 
-> You can use an existing Azure account or create a [free account using this link](https://aka.ms/azure-account-free).
+**You can use an existing Azure account or create a [free account using this link](https://aka.ms/azure-account-free)**
 
 First things first, [create a Resource Group](https://docs.microsoft.com/azure/azure-resource-manager/management/manage-resource-groups-portal?WT.mc_id=data-11340-abhishgu#create-resource-groups) to host the resources used for this workshop. This will make it easier to manage them and clean-up once you're done.
 
@@ -52,7 +50,7 @@ For Azure Cosmos DB **Core SQL API** account:
 
 Create Azure Cosmos DB database (named **RetailSalesDemoDB**) and three containers (**StoreDemoGraphics**, **RetailSales**, and **Products**). Please make sure to:
 
-- Set the database throughput to `Autoscale` and set the limit to `40000` instead of `400`, this will speed-up the loading process of the data, scaling down the database when it is not in use. For more information, [check the documentation](https://docs.microsoft.com/azure/cosmos-db/provision-throughput-autoscale?WT.mc_id=data-11340-abhishgu).
+- Set the database throughput to `Autoscale` and set the limit to `40000` instead of `400`, this will speed-up the loading process of the data, scaling down the database when it is not in use. ([Check the documentation](https://docs.microsoft.com/azure/cosmos-db/provision-throughput-autoscale?WT.mc_id=data-11340-abhishgu) onn how to set throughput)
 - Use **/id** as the Partition key for all 3 containers.
 - **Analytical store** is set to **On** for all 3 containers.
 
