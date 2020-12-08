@@ -50,7 +50,7 @@ For Azure Cosmos DB **Core SQL API** account:
 
 Create Azure Cosmos DB database (named **RetailSalesDemoDB**) and three containers (**StoreDemoGraphics**, **RetailSales**, and **Products**). Please make sure to:
 
-- Set the database throughput to `Autoscale` and set the limit to `40000` instead of `400`, this will speed-up the loading process of the data, scaling down the database when it is not in use. ([Check the documentation](https://docs.microsoft.com/azure/cosmos-db/provision-throughput-autoscale?WT.mc_id=data-11340-abhishgu) onn how to set throughput)
+- Set the database throughput to `Autoscale` and set the limit to `40000` instead of `400`, this will speed-up the loading process of the data, scaling down the database when it is not in use ([check the documentation](https://docs.microsoft.com/azure/cosmos-db/provision-throughput-autoscale?WT.mc_id=data-11340-abhishgu) on how to set throughput)
 - Use **/id** as the Partition key for all 3 containers.
 - **Analytical store** is set to **On** for all 3 containers.
 
@@ -71,9 +71,7 @@ You're all set to try out the Notebooks!
 
 **Batch Data Ingestion leveraging Synapse Link for Azure Cosmos DB**
 
-We will go through how to ingest batch data into Azure Cosmos DB using using Synapse using [this notebook](https://github.com/Azure-Samples/Synapse/blob/master/Notebooks/PySpark/Synapse%20Link%20for%20Cosmos%20DB%20samples/Retail/spark-notebooks/pyspark/1CosmoDBSynapseSparkBatchIngestion.ipynb). 
-
-> Learn more about [the use cases for Apache Spark in Azure Synapse Analytics](https://docs.microsoft.com/azure/synapse-analytics/spark/apache-spark-overview?WT.mc_id=data-11340-abhishgu#apache-spark-in-azure-synapse-analytics-use-cases), including Data Engineering, Machine Learning etc.
+We will go through how to ingest batch data into Azure Cosmos DB using using Synapse using [this notebook](https://github.com/Azure-Samples/Synapse/blob/master/Notebooks/PySpark/Synapse%20Link%20for%20Cosmos%20DB%20samples/Retail/spark-notebooks/pyspark/1CosmoDBSynapseSparkBatchIngestion.ipynb).
 
 Clone or download the content from the [samples repo](https://github.com/Azure-Samples/Synapse), navigate to the `Synapse/Notebooks/PySpark/Synapse Link for Cosmos DB samples/Retail/spark-notebooks/pyspark` directory and import the `1CosmoDBSynapseSparkBatchIngestion.ipynb` file into your Azure Synapse workspace
 
@@ -91,7 +89,7 @@ Clone or download the content from the [samples repo](https://github.com/Azure-S
 
 **Getting started with Azure Cosmos DB's API for MongoDB and Synapse Link**
 
-We will explore [this notebook](https://github.com/Azure-Samples/Synapse/blob/master/Notebooks/PySpark/Synapse%20Link%20for%20Cosmos%20DB%20samples/IoT/spark-notebooks/pyspark/01-CosmosDBSynapseStreamIngestion.ipynb) to get an overview of how to work with streaming data using Spark.
+We will explore [this notebook](https://github.com/Azure-Samples/Synapse/blob/master/Notebooks/PySpark/Synapse%20Link%20for%20Cosmos%20DB%20samples/IoT/spark-notebooks/pyspark/01-CosmosDBSynapseStreamIngestion.ipynb).
 
 This notebook uses specific Python libraries. Please upload the `requirements.txt` file located in `Synapse/Notebooks/PySpark/Synapse Link for Cosmos DB samples/E-Commerce/spark-notebooks/pyspark` directory to install these to your Spark pool packages.
 
@@ -105,6 +103,7 @@ Delete the [Azure Resource Group](https://docs.microsoft.com/azure/azure-resourc
 
 ## Learn at your own pace
 
+- Learn more about [the use cases for Apache Spark in Azure Synapse Analytics](https://docs.microsoft.com/azure/synapse-analytics/spark/apache-spark-overview?WT.mc_id=data-11340-abhishgu#apache-spark-in-azure-synapse-analytics-use-cases), including Data Engineering, Machine Learning etc.
 - Learn how to [enrich data in Spark tables with new machine learning models that you train using AutoML in Azure Machine Learning](https://docs.microsoft.com/azure/synapse-analytics/machine-learning/tutorial-automl?WT.mc_id=data-11340-abhishgu)
 - A dedicated, multi-module **Learning Path** to guide you through how to [Perform data engineering with Azure Synapse Apache Spark Pools](https://docs.microsoft.com/learn/paths/perform-data-engineering-with-azure-synapse-apache-spark-pools/?WT.mc_id=data-11340-abhishgu)
 - [Use this tutorial](https://docs.microsoft.com/azure/synapse-analytics/quickstart-sql-on-demand?WT.mc_id=data-11340-abhishgu) to try out how to query data in CSV, Apache Parquet, and JSON files using SQL Serverless pool in Azure Synapse Analytics.
