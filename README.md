@@ -11,7 +11,7 @@ It will cover:
     - Streaming ingestion into Azure Cosmos DB collection using Structured Streaming
     - Getting started with Azure Cosmos DB's API for MongoDB and Synapse Link
 
-![](https://docs.microsoft.com/en-us/azure/cosmos-db/media/synapse-link/synapse-analytics-cosmos-db-architecture.png)
+![](https://docs.microsoft.com/azure/cosmos-db/media/synapse-link/synapse-analytics-cosmos-db-architecture.png?WT.mc_id=data-0000-abhishgu)
 
 ## Learning materials and resources
 
@@ -55,7 +55,7 @@ Create Azure Cosmos DB database (named **RetailSalesDemoDB**) and three containe
 - Use **/id** as the Partition key for all 3 containers.
 - **Analytical store** is set to **On** for all 3 containers.
 
-> [Detailed steps are outlined in the documentation](https://docs.microsoft.com/azure/cosmos-db/configure-synapse-link?WT.mc_id=reactor-3reg-reactor&WT.mc_id=data-11340-abhishgu#create-analytical-ttl)
+> [Detailed steps are outlined in the documentation](https://docs.microsoft.com/azure/cosmos-db/configure-synapse-link?WT.mc_id=data-0000-abhishgu#create-analytical-ttl)
 
 For Azure Cosmos DB **MongoDB API** account:
 
